@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class HotelService {
     HotelRepository hotelRepository;
@@ -35,7 +38,22 @@ public class HotelService {
                 roomRequestDTO.getRoomNumber(),
                 roomRequestDTO.getPrice(),
                 roomRequestDTO.getPersonsNumber(),
-                hotel);
+                hotel
+        );
         return roomRepository.save(room);
     }
+
+    @Transactional
+    public Hotel removeRoomFromHotel(RoomRequestDTO roomRequestDTO, Long hotelId){
+        Hotel hotel = hotelRepository.findById(hotelId).orElseThrow(()->new ResourceNotFoundException("hotel doesn not found"));
+        Room roomToBeRemoved = hotel.getRooms().stream()
+                .filter(room -> room.getId().equals(roomRequestDTO.getId()))
+                .findFirst()
+                .orElseThrow(()-> new ResourceNotFoundException("Room not found"));
+
+        hotel.getRooms().remove(roomToBeRemoved);
+        return hotelRepository.save(hotel);
+    }
+
+
 }

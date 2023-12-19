@@ -3,7 +3,6 @@ package com.Booking.Booking.entities;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,15 +24,14 @@ public class Room {
     private Integer price;
     private Integer personsNumber;
 
-    public Room() {
+    public Room(Integer roomNumber, Integer price, Integer personsNumber, Hotel hotel) {
     }
 
-    public Room(Hotel hotel, List<Reservartion> reservations, Integer roomNumber, Integer price, Integer personsNumber) {
+    public Room(Hotel hotel, Integer roomNumber, Integer price, Integer personsNumber) {
         this.hotel = hotel;
         this.roomNumber = roomNumber;
         this.price = price;
         this.personsNumber = personsNumber;
-        reservations = new ArrayList<>();
     }
 
     public Long getId() {
