@@ -1,9 +1,9 @@
-package com.Booking.Booking.Service;
+package com.Booking.Booking.B_service;
 
-import com.Booking.Booking.Repositories.HotelRepository;
-import com.Booking.Booking.Repositories.RoleRepository;
-import com.Booking.Booking.Repositories.RoomRepository;
-import com.Booking.Booking.Repositories.UserRepository;
+import com.Booking.Booking.C_repositories.HotelRepository;
+import com.Booking.Booking.C_repositories.RoleRepository;
+import com.Booking.Booking.C_repositories.RoomRepository;
+import com.Booking.Booking.C_repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

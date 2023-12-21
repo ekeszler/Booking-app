@@ -1,4 +1,4 @@
-package com.Booking.Booking.entities;
+package com.Booking.Booking.D_entities;
 
 public enum RoleType {
 

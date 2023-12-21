@@ -1,13 +1,10 @@
-package com.Booking.Booking.Service;
+package com.Booking.Booking.B_service;
 
-import com.Booking.Booking.Repositories.HotelRepository;
-import com.Booking.Booking.Repositories.RoomRepository;
-import com.Booking.Booking.entities.Room;
+import com.Booking.Booking.C_repositories.RoomRepository;
+import com.Booking.Booking.D_entities.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.StyleSheet;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;

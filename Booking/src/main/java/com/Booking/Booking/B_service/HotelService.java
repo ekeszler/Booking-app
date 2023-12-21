@@ -1,18 +1,14 @@
-package com.Booking.Booking.Service;
+package com.Booking.Booking.B_service;
 
-import com.Booking.Booking.Repositories.HotelRepository;
-import com.Booking.Booking.Repositories.RoomRepository;
-import com.Booking.Booking.dtos.RoomRequestDTO;
-import com.Booking.Booking.entities.Hotel;
-import com.Booking.Booking.entities.Room;
-import com.Booking.Booking.exceprions.ResourceNotFoundException;
+import com.Booking.Booking.C_repositories.HotelRepository;
+import com.Booking.Booking.C_repositories.RoomRepository;
+import com.Booking.Booking.E_dtos.RoomRequestDTO;
+import com.Booking.Booking.D_entities.Hotel;
+import com.Booking.Booking.D_entities.Room;
+import com.Booking.Booking.G_exceprions.ResourceNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class HotelService {

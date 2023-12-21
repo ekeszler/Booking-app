@@ -1,4 +1,4 @@
-package com.Booking.Booking.dtos;
+package com.Booking.Booking.E_dtos;
 
 public class RoomRequestDTO {
 

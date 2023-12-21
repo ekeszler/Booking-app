@@ -1,4 +1,4 @@
-package com.Booking.Booking.entities;
+package com.Booking.Booking.D_entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

@@ -1,6 +1,6 @@
-package com.Booking.Booking.GlobalExceptionHandler;
+package com.Booking.Booking.F_GlobalExceptionHandler;
 
-import com.Booking.Booking.exceprions.ResourceNotFoundException;
+import com.Booking.Booking.G_exceprions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

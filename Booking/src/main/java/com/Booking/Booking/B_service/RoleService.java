@@ -1,4 +1,4 @@
-package com.Booking.Booking.Service;
+package com.Booking.Booking.B_service;
 
 import org.springframework.stereotype.Service;
 

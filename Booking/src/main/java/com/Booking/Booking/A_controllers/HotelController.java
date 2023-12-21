@@ -1,8 +1,8 @@
-package com.Booking.Booking.controllers;
+package com.Booking.Booking.A_controllers;
 
-import com.Booking.Booking.Service.HotelService;
-import com.Booking.Booking.dtos.RoomRequestDTO;
-import com.Booking.Booking.entities.Hotel;
+import com.Booking.Booking.B_service.HotelService;
+import com.Booking.Booking.E_dtos.RoomRequestDTO;
+import com.Booking.Booking.D_entities.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

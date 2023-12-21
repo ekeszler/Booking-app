@@ -1,4 +1,4 @@
-package com.Booking.Booking.exceprions;
+package com.Booking.Booking.G_exceprions;
 
 public class ResourceNotFoundException extends RuntimeException{
     public ResourceNotFoundException(String message){

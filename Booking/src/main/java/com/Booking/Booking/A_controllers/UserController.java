@@ -1,6 +1,6 @@
-package com.Booking.Booking.controllers;
+package com.Booking.Booking.A_controllers;
 
-import com.Booking.Booking.Service.UserService;
+import com.Booking.Booking.B_service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
