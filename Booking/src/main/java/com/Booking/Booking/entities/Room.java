@@ -1,8 +1,10 @@
 package com.Booking.Booking.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,8 +19,9 @@ public class Room {
     @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
-    @ManyToMany(mappedBy = "rooms")
-    private List<Reservartion> reservations;
+    @OneToMany(mappedBy = "room",  cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+    @JsonManagedReference("roomreservation-room")
+    List<RoomReservation> roomReservationList;
 
     private Integer roomNumber;
     private Integer price;
@@ -32,6 +35,7 @@ public class Room {
         this.roomNumber = roomNumber;
         this.price = price;
         this.personsNumber = personsNumber;
+        roomReservationList = new ArrayList<>();
     }
 
     public Long getId() {
@@ -50,12 +54,12 @@ public class Room {
         this.hotel = hotel;
     }
 
-    public List<Reservartion> getReservations() {
-        return reservations;
+    public List<RoomReservation> getRoomReservationList() {
+        return roomReservationList;
     }
 
-    public void setReservations(List<Reservartion> reservations) {
-        this.reservations = reservations;
+    public void setRoomReservationList(List<RoomReservation> roomReservationList) {
+        this.roomReservationList = roomReservationList;
     }
 
     public Integer getRoomNumber() {
@@ -81,4 +85,6 @@ public class Room {
     public void setPersonsNumber(Integer personsNumber) {
         this.personsNumber = personsNumber;
     }
+
+
 }

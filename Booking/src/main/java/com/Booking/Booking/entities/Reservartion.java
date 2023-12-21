@@ -16,17 +16,13 @@ public class Reservartion {
     private Long id;
 
     @ManyToOne
-    @JsonBackReference("reservation-user")
-    @JoinColumn(name = "reservation_id")
+    @JsonBackReference("user-reservation")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "reservation-room",
-            joinColumns = @JoinColumn(name = "reservation_id"),
-            inverseJoinColumns = @JoinColumn(name = "room_id")
-    )
-    private List<Room> rooms;
+    @OneToMany(mappedBy = "reservation",  cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+    @JsonManagedReference("reservation-roomreservation")
+    private List<RoomReservation> roomReservationList;
 
     private LocalDateTime checkIn;
     private LocalDateTime checkOut;
@@ -50,12 +46,12 @@ public class Reservartion {
         this.user = user;
     }
 
-    public List<Room> getRooms() {
-        return rooms;
+    public List<RoomReservation> getRoomReservationList() {
+        return roomReservationList;
     }
 
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
+    public void setRoomReservationList(List<RoomReservation> roomReservationList) {
+        this.roomReservationList = roomReservationList;
     }
 
     public LocalDateTime getCheckIn() {

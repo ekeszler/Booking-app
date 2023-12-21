@@ -3,7 +3,6 @@ package com.Booking.Booking.dtos;
 public class RoomRequestDTO {
 
     private Long id;
-
     private Integer roomNumber;
     private Integer price;
     private Integer personsNumber;

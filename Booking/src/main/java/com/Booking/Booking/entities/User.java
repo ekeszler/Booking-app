@@ -21,9 +21,9 @@ public class User {
     )
     private Set<Hotel> hotels;
 
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("user-reservation")
-    List<Reservartion> reservartions;
+    private List<Reservartion> reservartions;
 
     @ManyToMany(mappedBy ="users",cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonManagedReference("users-roles")
